@@ -359,3 +359,37 @@ nav button {
 .clicked_gb {
     border: 2px solid #007FFF;
 }
+
+
+
+
+
+
+
+
+
+
+.header_top{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 90px 10px 90px; 
+    align-items: center;
+    
+}
+
+.bottom_text a{
+    text-decoration: none;
+}
+
+.header_bottom{
+    display: flex;
+    justify-content: flex-end;
+    gap: 70px;
+    padding: 10px 90px 10px 0;
+
+}
+.green_line_1 {
+    border-bottom: 1px solid lightgray;
+  }
+
+  
