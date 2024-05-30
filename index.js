@@ -2,9 +2,9 @@ let options = document.querySelectorAll('.btn_options')
 
 options.forEach((btns) => {
     btns.onclick = () => {
-       const clicked = document.querySelector('.clicked')
-       if(clicked) {
-        clicked.classList.remove('clicked')
+       const click = document.querySelector('.clicked')
+       if(click) {
+        click.classList.remove('clicked')
        }
        btns.classList.add('clicked')
     }
@@ -33,3 +33,8 @@ all_buttons.forEach((btn) => {
         btn.classList.add('phone_color')
     }
 })
+
+
+
+
+

@@ -11,19 +11,19 @@ const phone_colors = {
     "Space Grey": "img/space.png"
 }
 
-color_buttons.forEach((btn) => {
-    btn.onclick = () => {
-        const urls = phone_colors[btn.innerText]
+// color_buttons.forEach((btn) => {
+//     btn.onclick = () => {
+//         const urls = phone_colors[btn.innerText]
 
-        mac_img.style.backgroundImage = `url(${urls})`
-        mac_color.innerText = btn.innerText
-        if(btn.innerText === "Space Grey") {
-            mac_cost.innerText = '$2,599'
-        } else {
-            mac_cost.innerText = '$1,999'
-        }
-    }
-})
+//         mac_img.style.backgroundImage = `url(${urls})`
+//         mac_color.innerText = btn.innerText
+//         if(btn.innerText === "Space Grey") {
+//             mac_cost.innerText = '$2,599'
+//         } else {
+//             mac_cost.innerText = '$1,999'
+//         }
+//     }
+// })
 
 all_gbButtons.forEach((btns) => {
     btns.onclick = () => {
@@ -32,5 +32,48 @@ all_gbButtons.forEach((btns) => {
             clicked_gb.classList.remove('clicked_gb')
         }
         btns.classList.add('clicked_gb')
+    }
+})
+
+
+
+
+
+
+
+
+
+const btns = document.querySelectorAll('button[data-price]')
+const total_price = document.querySelector('#span')  
+const org_price = 999
+
+
+
+
+btns.forEach((btn) => {
+    btn.onclick = () => {
+        const price = +btn.getAttribute('data-price')
+
+        total_price.innerText = org_price + price
+    }
+})
+
+
+
+
+
+
+
+
+
+let options = document.querySelectorAll('.gb_btn')
+
+options.forEach((other) => {
+    other.onclick = () => {
+       const click = document.querySelector('.clicked')
+       if(click) {
+        click.classList.remove('clicked')
+       }
+       other.classList.add('clicked')
     }
 })
