@@ -7,37 +7,23 @@ const mac_cost = document.querySelector('.mac_cost')
 
 
 const phone_colors = {
-    "White": "img/white.png",
-    "Space Grey": "img/space.png"
+    "White": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-silver-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697230830269",
+    "Space Grey": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697230830200"
 }
 
-// color_buttons.forEach((btn) => {
-//     btn.onclick = () => {
-//         const urls = phone_colors[btn.innerText]
+color_buttons.forEach((btn) => {
+    btn.onclick = () => {
+        const urls = phone_colors[btn.innerText]
 
-//         mac_img.style.backgroundImage = `url(${urls})`
-//         mac_color.innerText = btn.innerText
-//         if(btn.innerText === "Space Grey") {
-//             mac_cost.innerText = '$2,599'
-//         } else {
-//             mac_cost.innerText = '$1,999'
-//         }
-//     }
-// })
-
-all_gbButtons.forEach((btns) => {
-    btns.onclick = () => {
-        const clicked_gb = document.querySelector('.clicked_gb')
-        if(clicked_gb) {
-            clicked_gb.classList.remove('clicked_gb')
+        mac_img.style.backgroundImage = `url(${urls})`
+        mac_color.innerText = btn.innerText
+        if(btn.innerText === "Space Grey") {
+            mac_cost.innerText = '999'
+        } else {
+            mac_cost.innerText = '999'
         }
-        btns.classList.add('clicked_gb')
     }
 })
-
-
-
-
 
 
 
@@ -55,6 +41,14 @@ btns.forEach((btn) => {
         const price = +btn.getAttribute('data-price')
 
         total_price.innerText = org_price + price
+
+
+
+        const click = document.querySelector('.clicked')
+        if(click) {
+         click.classList.remove('clicked')
+        }
+        btn.classList.add('clicked')
     }
 })
 
@@ -64,16 +58,3 @@ btns.forEach((btn) => {
 
 
 
-
-
-let options = document.querySelectorAll('.gb_btn')
-
-options.forEach((other) => {
-    other.onclick = () => {
-       const click = document.querySelector('.clicked')
-       if(click) {
-        click.classList.remove('clicked')
-       }
-       other.classList.add('clicked')
-    }
-})
